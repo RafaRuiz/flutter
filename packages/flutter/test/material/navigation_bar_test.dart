@@ -1761,7 +1761,7 @@ void main() {
     expect(tester.getSize(find.byType(NavigationBar)), Size.zero);
   });
 
-  testWidgets('NavigationDestination label uses default textAlign when none given', (
+  testWidgets('NavigationDestination label defaults to TextAlign.center when none given', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(
@@ -1777,7 +1777,7 @@ void main() {
     );
 
     final Text text = tester.widget<Text>(find.text('HOME'));
-    expect(text.textAlign, isNull);
+    expect(text.textAlign, TextAlign.center);
   });
 
   testWidgets('NavigationDestination label respects the given textAlign parameter', (

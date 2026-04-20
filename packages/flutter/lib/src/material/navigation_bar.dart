@@ -431,8 +431,8 @@ class NavigationDestination extends StatelessWidget {
   /// the destination has additional layout constraints or text direction
   /// requirements.
   ///
-  /// If this is null, the alignment defaults to the value from
-  /// [DefaultTextStyle.of], which is typically [TextAlign.start].
+  /// If null, defaults to [TextAlign.center], following the Material Design
+  /// navigation bar accessibility guidelines.
   final TextAlign? textAlign;
 
   @override
@@ -523,7 +523,7 @@ class NavigationDestination extends StatelessWidget {
             // sizes. To opt out, wrap the [label] widget in a [MediaQuery] widget
             // with a different `TextScaler`.
             maxScaleFactor: _kMaxLabelTextScaleFactor,
-            child: Text(label, style: textStyle, textAlign: textAlign),
+            child: Text(label, style: textStyle, textAlign: textAlign ?? TextAlign.center),
           ),
         );
       },
